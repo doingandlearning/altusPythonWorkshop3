@@ -1,3 +1,5 @@
+from functools import wraps
+
 class CountCalls:
     _call_count = {}  # Initialize a dictionary to store the call count
 
@@ -18,3 +20,15 @@ def count_calls(func):
         print(f"{func.__name__} has been called {count} times.")
         return func(*args, **kwargs)
     return wrapper
+
+import time 
+def timefunction(func):
+  def wrapper(*args, **kwargs):
+    # start a timer
+    start_time = time.perf_counter()
+    result = func(*args, **kwargs)
+    end_time = time.perf_counter()
+    # end a timer
+    print(f"{func.__name__} took {end_time - start_time:.4f} seconds to execute.")
+    return result
+  return wrapper
