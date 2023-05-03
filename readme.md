@@ -1,6 +1,6 @@
 # Python Workshops
 
-- May 3rd - 5rg
+- May 3rd - May 5th
 - Kevin Cunningham
 - Miro Link: https://miro.com/app/board/uXjVMMkb1Wo=/
 - 9am-2pm BST
