@@ -22,5 +22,5 @@ text = "Functional programming is a programming paradigm that treats computation
 top_x = 5
 
 print(top_x_words(text, top_x))
-# Expected output: [('programming', 4), ('and', 2), ('is', 2), ('a', 2), ('paradigm', 2)]
+# Expected output: [('programming', 4), ('is', 3), ('a', 2), ('paradigm', 2), ('of', 2)]
 ```
