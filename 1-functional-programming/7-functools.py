@@ -7,7 +7,7 @@ def cached_fib(num):
     if num < 2:
         return num
     else:
-        return fib(num-1) + fib(num-2)
+        return cached_fib(num-1) + cached_fib(num-2)
 
 def fib(num):
     if num < 2:
@@ -23,8 +23,8 @@ def specific_fib(num):
 def specific_cached_fib(num):
   return cached_fib(num)
 
-# print(specific_cached_fib(40))
-# print(specific_fib(40))
+print(specific_cached_fib(200))
+print(specific_fib(40))
 
 
 def add(a,b):
