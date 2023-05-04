@@ -22,3 +22,4 @@
 - Unit and functional tests 
 - pytest
 - AWS Power tools 
+	- Don't forget about exception handling!
