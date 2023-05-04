@@ -26,10 +26,13 @@ def hello_named_person(name, timezone):
   return f"Hello, {name} - you are in {timezone}"
 
 
-# Query parameter
+# Query parameter ?name=Person&location=Place
 @app.get("/person")
 def hello_and_location():
   name = request.args.get("name", "Unnamed")
   location = request.args.get("location", "Unknown")
 
   return f"Hi {name}, you are in {location}"
+
+if __name__ == "__main__":
+  app.run(debug=True)
