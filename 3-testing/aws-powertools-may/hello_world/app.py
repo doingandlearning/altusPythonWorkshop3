@@ -1,6 +1,7 @@
 from aws_xray_sdk.core import xray_recorder
 from aws_lambda_powertools.event_handler import APIGatewayRestResolver
 from aws_lambda_powertools import Logger
+from decorator import add_exception_logging
 
 logger = Logger(service="HELLO")
 
@@ -8,7 +9,9 @@ app = APIGatewayRestResolver()
 
 @app.get("/hello/<name>")
 @xray_recorder.capture('hello_name')
+@add_exception_logging(logger=logger)
 def hello_name(name):
+  raise Exception("This is an error!")
   logger.info(f"Request from {name}.")
   return {"message": f"Hello {name}!"}
 
