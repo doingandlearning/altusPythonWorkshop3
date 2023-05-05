@@ -6,6 +6,7 @@ class Todo(db.Model):
     description = db.Column(db.String)
     completed = db.Column(db.Boolean, default=False)
     due_date = db.Column(db.Date)
+    category = db.Column(db.String)
 
     def to_dict(self):
         return {

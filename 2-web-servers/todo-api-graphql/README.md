@@ -38,9 +38,6 @@ db.session.commit()
 
 ## Running the app
 
-```bash
-export FLASK_APP=main
-```
 
 Start the server 
 ```bash
@@ -81,10 +78,12 @@ query fetchTodo {
 To add a new todo, type a mutation in the editor, similar to the one below:
 ```graphql
 mutation newTodo {
-  createTodo(input:{description:"Go to the gym", dueDate:"25-10-2021"}) {
-    description
-    dueDate
-    completed
+  createTodo(description:"Go to the gym", dueDate:"25-10-2021") {
+    todo {
+      description
+      dueDate
+      completed
+    }   
   }
 }
 ```

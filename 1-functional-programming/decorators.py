@@ -22,13 +22,25 @@ def count_calls(func):
     return wrapper
 
 import time 
-def timefunction(func):
-  def wrapper(*args, **kwargs):
-    # start a timer
-    start_time = time.perf_counter()
-    result = func(*args, **kwargs)
-    end_time = time.perf_counter()
-    # end a timer
-    print(f"{func.__name__} took {end_time - start_time:.4f} seconds to execute.")
-    return result
-  return wrapper
+def timefunction(message=""):
+    def wrappedtimefunction(func):
+        def wrapper(*args, **kwargs):
+            if message:
+                print(message)
+            # start a timer
+            start_time = time.perf_counter()
+            result = func(*args, **kwargs)
+            end_time = time.perf_counter()
+            # end a timer
+            print(f"{func.__name__} took {end_time - start_time:.4f} seconds to execute.")
+            return result
+        return wrapper
+    return wrappedtimefunction
+
+
+@timefunction()
+def time_me_please():
+    time.sleep(0.5)
+    print("I'm all done!")
+
+time_me_please()
