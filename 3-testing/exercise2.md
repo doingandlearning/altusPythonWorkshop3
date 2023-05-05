@@ -14,7 +14,7 @@ class MyGreatException(Exception):
 Create a custom exception called NegativeResultError. Modify the my_add function to raise this exception when the result is negative. Write a test that checks if the custom exception is raised when adding two negative numbers.
 
 3. Create a fixture to manage a temporary file
-
+(yield vs return in fixtures ... )
 Write a fixture called temp_file that creates a temporary file, writes some data to it, and then deletes the file after the test is done. Write a test function that uses this fixture to read the contents of the temporary file and check if the data is correct.
 
 4. Use pytest.mark.parametrize with a fixture
